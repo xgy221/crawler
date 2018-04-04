@@ -10,16 +10,16 @@ def getHtml(url):
 
 
 def getImg(html):
-    reg = r'src="(.+?\.jpg)" pic_ext'
+    reg = r'src="(.+?\.png)" alt'
     imgre = re.compile(reg)
-    html = html.decode('utf-8')
+    html = html.decode('gb2312')
     imglist = re.findall(imgre, html)
     x = 0
     for imgurl in imglist:
-        urllib.request.urlretrieve(imgurl, '%s.jpg' % x)
+        urllib.request.urlretrieve(imgurl, '%s.png' % x)
         x += 1
 
 
-html = getHtml("http://tieba.baidu.com/p/2460150866")
+html = getHtml("http://www.3lian.com/gif/2008/8-1/00130953823.html")
 
 print(getImg(html))
