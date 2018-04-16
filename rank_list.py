@@ -6,7 +6,7 @@ url = "http://fsight.qq.com/GameListAjax"
 response = urllib.request.urlopen(url)
 html = response.read()
 html = html.decode('utf-8')
-# print(html)
+print(html)
 hjson = json.loads(html)
 # print(hjson)
 with open("rank_list.csv", "w", newline="") as w:

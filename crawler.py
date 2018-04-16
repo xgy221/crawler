@@ -21,7 +21,7 @@ def get_rank_list(connection, date, token, rankRange):
 
 
 def save_csv(file_name, data):
-    with open(file_name + ".csv", "w") as w:
+    with open(file_name + ".csv", "w", newline="", encoding='utf-8') as w:
         writer = csv.writer(w)
         for row in data:
             writer.writerow(row)
